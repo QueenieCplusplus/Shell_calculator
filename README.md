@@ -25,16 +25,16 @@ to call function file in script
 
       if [ $# -gt 0 ]; then
 
-        exec scriptbc "$@" #(b)
+        exec scriptbc "$@" 
 
       fi 
 
       echo "calculate-- help or quit?"
 
-      /bin/echo -n "calculate> "  #(c) /bin/echo -n ""
+      /bin/echo -n "calculate> "  #(b)
 
 
-      while read cmd args # param is called cmd and args # (d) while read loop
+      while read cmd args # param is called cmd and args # (c) 
       do
 
          case  $cmd
@@ -43,7 +43,7 @@ to call function file in script
             quit | exit ) exit ;;
             help | ? )  show_help ;;
             scale ) scale=$args ;;
-            * ) scriptbc -p $scale "$cmd" "$args" ;; (c)
+            * ) scriptbc -p $scale "$cmd" "$args" ;; 
 
          esac
 
@@ -55,3 +55,24 @@ to call function file in script
       echo " "
 
       exit 0 
+
+* Syntax
+
+   * (a) 
+   
+   
+         cat << EOF   
+   
+         EOF
+   
+   * (b)
+       
+         /bin/echo -n ""
+         
+   * (c) while-read loop
+   
+* Function File called scriptbc
+
+
+* Execution
+   
