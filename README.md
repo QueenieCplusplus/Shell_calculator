@@ -58,16 +58,16 @@ to call function file in script
 
 * Syntax
 
-   * (a) 
+   * (a) EOF 注意 indent 別縮排
    
    
          cat << EOF   
    
          EOF
    
-   * (b)
-       
-         /bin/echo -n ""
+   * (b) /bin/echo -n ""
+   
+         echo is /bin/echo
          
    * (c) while-read loop
    
