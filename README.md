@@ -75,8 +75,30 @@ to call function file in script
    
 * Function File called scriptbc
 
-           先確認 Path 目錄中 scriptbc 變數有指定路徑。
-           腳本以互動方式執行，如執行時指定參數，這些參數會轉轉給函式檔案做處理。
+
+    先確認 Path 目錄中 scriptbc 變數有指定路徑。
+    腳本以互動方式執行，如執行時指定參數，這些參數會轉轉給函式檔案做處理。
+
+      #!/bin/bash
+      # bc
+      # scriptbc
+
+      if [ "$1" = -p ] ; then
+        precision=$2
+        shift 2
+      else
+        precision=2
+
+      fi
+
+      bc -q -l << EOF
+         scale=$precision
+         $*
+         quit
+      EOF
+
+      exit 0
+
 
 * Execution
 
