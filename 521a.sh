@@ -21,16 +21,16 @@ EOF
 
 if [ $# -gt 0 ]; then
 
-	exec scriptbc "$@" #(b)
+	exec scriptbc "$@" 
 
 fi 
 
 echo "calculate-- help or quit?"
 
-/bin/echo -n "calculate> "  #(c) /bin/echo -n ""
+/bin/echo -n "calculate> "  #(b)
 
 
-while read cmd args # param is called cmd and args # (d) while read loop
+while read cmd args # param is called cmd and args # (c) 
 do
 
    case  $cmd
@@ -39,7 +39,7 @@ do
       quit | exit ) exit ;;
       help | ? )  show_help ;;
       scale ) scale=$args ;;
-      * ) scriptbc -p $scale "$cmd" "$args" ;; (c)
+      * ) scriptbc -p $scale "$cmd" "$args" ;; 
 
    esac
 
