@@ -71,6 +71,8 @@ to call function file in script
          
    * (c) while-read loop
    
+        此迴圈是讓 /bin/echo -n "calculate> " 一直顯示。
+   
 * Function File called scriptbc
 
            先確認 Path 目錄中 scriptbc 變數有指定路徑。
